@@ -1,4 +1,4 @@
-# app.py
+# main.py
 
 import streamlit as st
 import pandas as pd
@@ -12,6 +12,13 @@ st.image("logo.png", use_column_width=False, width=300)  # 로고 크기를 조�
 # 중앙에 텍스트 (가운데 정렬)
 st.title("자취생을 위한 건강한 한끼")
 
+sidebar_deco = st.sidebar.selectbox(
+    'Pages',
+    ('main', 'food categories', 'menu'))
+
+
+
+
 def main() :
     
     # 유저한테 입력을 받는 방법
@@ -22,18 +29,21 @@ def main() :
     if name != '' :
         st.subheader(name + '님, 안녕하세요!')
 
+        if 'user_name' not in st.session_state:
+            st.session_state['user_name'] = ''
+        st.session_state['user_name'] = name
+    
     # 2. 입력 글자 갯수 제한
     st.number_input('키를 입력하세요', 1, 200)
     
     st.number_input('몸무게를 입력하세요', 0, 150)
-    
-    
+
+
+
 if __name__ == "__main__" :
     main()
 
-
 def main() :
-    
     # 비밀번호 입력
     password = st.text_input('비밀번호 입력', type='password')
     st.write(password)
@@ -64,22 +74,6 @@ if st.button("\n\n\nclick button"):
 st.subheader("체크박스")
 menu1 = st.checkbox('체크박스')
 
-# 선택 박스
-
-st.subheader("라디오버튼")
-selected_item = st.radio("Radio Part", ("초콜릿", "딸기", "바나나", "멜론"))
-
-if selected_item == "초콜릿":
-    st.write("초콜릿")
-elif selected_item == "딸기":
-    st.write("딸기")
-elif selected_item == "바나나":
-    st.write("바나나")
-elif selected_item == "멜론":
-    st.write("멜론")
-
-
-
     
 st.subheader("각 종류별로 선택해서 모든 데이터 확인할 수 있도록")
 
@@ -93,18 +87,5 @@ if __name__ == "__main__" :
     main()
 
 
-
-# def main() :
-#     df = pd.read_csv('cvs_db.csv') # CSV 파일 불러오고 df 변수에 저장
-
-#     st.dataframe(df)
-
-#     df.head()
-
-#     st.dataframe( df.head() )
-#     st.write( df.head() )
-
-# if __name__ == '__main__' :
-#     main()
 
 

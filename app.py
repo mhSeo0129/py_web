@@ -11,7 +11,7 @@ st.image("logo.png", use_column_width=False, width=300)  # 로고 크기를 조�
 
 # 중앙에 텍스트 (가운데 정렬)
 st.title("자취생을 위한 건강한 한끼")
-st.write("st.write 사용")
+st.write("## st.write 사용")
 
 # 중앙 하단 버튼
 if st.button("식단 구성하기"):
@@ -28,14 +28,16 @@ menu1 = st.checkbox('체크박스')
 # 선택 박스
 
 st.subheader("라디오버튼")
-selected_item = st.radio("Radio Part", ("A", "B", "C"))
+selected_item = st.radio("Radio Part", ("초콜릿", "딸기", "바나나", "멜론"))
 
-if selected_item == "A":
-    st.write("A!!")
-elif selected_item == "B":
-    st.write("B!")
-elif selected_item == "C":
-    st.write("C!")
+if selected_item == "초콜릿":
+    st.write("초콜릿")
+elif selected_item == "딸기":
+    st.write("딸기")
+elif selected_item == "바나나":
+    st.write("바나나")
+elif selected_item == "멜론":
+    st.write("멜론")
     
     
 # 다중선택박스

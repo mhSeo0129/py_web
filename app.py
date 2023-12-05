@@ -23,8 +23,10 @@ def main() :
         st.subheader(name + '님, 안녕하세요!')
 
     # 2. 입력 글자 갯수 제한
-    height = st.text_input('키를 입력하세요', max_chars=10)
-    st.subheader(height + "cm" )
+    st.number_input('키를 입력하세요', 1, 200)
+    
+    st.number_input('몸무게를 입력하세요', 0, 150)
+    
     
 if __name__ == "__main__" :
     main()

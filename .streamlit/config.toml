@@ -1,0 +1,5 @@
+# config.toml 파일
+[theme]
+secondaryBackgroundColor="F0F0F0" 		# side bar
+textColor = "black"
+font = "monospace"

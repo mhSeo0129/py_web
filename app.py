@@ -21,7 +21,7 @@ if 'user_text' not in st.session_state:
 # Streamlit 앱 정의
 def main():
     # 제목 추가
-    st.title("Streamlit 글상자 예제")
+    st.title("와라 편의점")
 
     # 텍스트 상자 추가
     user_input = st.text_input("여기에 텍스트를 입력하세요:", "기본 텍스트")

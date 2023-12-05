@@ -6,3 +6,24 @@ html, body, [class*="css"] {
     font-weight: 500;
     color: #091747;
 }
+
+
+/* @font-face {
+    font-family: "FONT_NAME";
+    src: url("http://address/font.ttf") format("truetype");
+}
+
+[class^="ag-"]:not([class^="ag-icon"]) {
+    font-family: "FONT_NAME";
+} */
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url(/fonts/mhSeo.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    [class^="ag-"]:not([class^="ag-icon"]) {
+        font-family: "CustomFont";
+}
+

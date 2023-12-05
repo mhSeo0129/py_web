@@ -5,14 +5,7 @@ from streamlit_extras.switch_page_button import switch_page
 st.set_page_config(page_title="와라, 편의점", page_icon="🍱", layout="wide")
 
 # 왼쪽 상단 로고 (크기 조절)
-st.image("logo.png", use_column_width=False, width=300)
-
-# 중앙에 텍스트 (가운데 정렬)
-st.title("자취생을 위한 건강한 한끼")
-
-sidebar_deco = st.sidebar.selectbox(
-    'Pages',
-    ('main', 'food categories', 'menu'))
+st.image("logo.png", use_column_width=False, width=200)
 
 def main():
     # 유저한테 입력을 받는 방법
@@ -35,8 +28,6 @@ def main():
 
     # 시작하기 버튼을 가운데 정렬하는 컨테이너 추가
     button_container = st.container()
- 
-
 
     selected_categories = st.multiselect('구성할 음식 종류를 모두 선택하세요!!!', ['라면', '김밥', '빵', '커피', '탄산음료', '유제품', '이온음료', '아이스크림', '디저트', '과자'])
 

@@ -1,12 +1,11 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
 # 전체 페이지 설정 (이 부분을 가장 위로 옮깁니다.)
 st.set_page_config(page_title="와라, 편의점", page_icon="🍱", layout="wide")
 
-
 # 왼쪽 상단 로고 (크기 조절)
 st.image("logo.png", use_column_width=False, width=300)
-
 
 # 중앙에 텍스트 (가운데 정렬) 및 마진 추가
 st.markdown("""
@@ -17,19 +16,14 @@ st.markdown("""
 
 
 # 중앙에 텍스트 (가운데 정렬)
-
-
 sidebar_deco = st.sidebar.selectbox(
     'Pages',
-    ('main', 'database', 'history', 'map', 'menu', 'practice', 'start'))
-
-from streamlit_extras.switch_page_button import switch_page
+    ('main', 'history', 'start', 'menu', 'database', 'map'))
 
 button_container = st.container()
 with button_container:
     if st.button("시작하기"):
         switch_page('start')
-
 
 # 스타일을 적용하여 가운데 정렬
 button_container.markdown("""
@@ -40,6 +34,11 @@ button_container.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+
+
+
+
+
 
 
 # custom_css = f"""

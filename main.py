@@ -18,62 +18,34 @@ sidebar_deco = st.sidebar.selectbox(
 
 
 
+st.link_button("시작하기", "http://localhost:8501/start")
 
-def main() :
-    # 유저한테 입력을 받는 방법
 
-    # 1. 이름 입력 받기
-    name = st.text_input('이름을 입력하세요!')
+# def switch_page(page_name: str):
+#     from streamlit import _RerunData, _RerunException
+#     from streamlit.source_util import get_pages
 
-    if name != '' :
-        st.subheader(name + '님, 안녕하세요!')
-        
-        if 'user_name' not in st.session_state:
-            st.session_state['user_name'] = ''
-        st.session_state['user_name'] = name
+#     def standardize_name(name: str) -> str:
+#         return name.lower().replace("_", " ")
     
-    # 2. 입력 글자 갯수 제한
-    st.number_input('키를 입력하세요', 1, 200)
-    st.number_input('몸무게를 입력하세요', 0, 150)
+#     page_name = standardize_name(page_name)
 
-if __name__ == "__main__" :
-    main()
+#     pages = get_pages("streamlit_app.py")  # OR whatever your main page is called
 
+#     for page_hash, config in pages.items():
+#         if standardize_name(config["page_name"]) == page_name:
+#             raise _RerunException(
+#                 _RerunData(
+#                     page_script_hash=page_hash,
+#                     page_name=page_name,
+#                 )
+#             )
 
-def main() :
-    # 비밀번호 입력
-    password = st.text_input('비밀번호 입력', type='password')
-    st.write(password)
+#     page_names = [standardize_name(config["page_name"]) for config in pages.values()]
 
-if __name__ == "__main__" :
-    main()
+#     raise ValueError(f"Could not find page {page_name}. Must be one of {page_names}")
+# from streamlit_extras.switch_page_button import switch_page
 
-
-# 중앙 하단 버튼
-if st.button("식단 구성하기"):
-    # 버튼을 눌렀을 때의 동작
-    st.success("식단이 생성되었습니다. 맛있게 드세요!")
-
-
-st.subheader("오늘 식단 구성은 어떻게 할까요?")
-def main() :
-
-    category = ['라면', '김밥', '빵', '커피', '탄산음료', '유제품', '이온음료', '아이스크림', '디저트', '과자']
-    st.multiselect('구성할 음식 종류를 모두 선택하세요!!!', category)
-
-if __name__ == "__main__" :
-    main()
-
-if st.button("\n\n\nclick button"):
-      st.write("Data Loading..")
-      # 데이터 로딩 함수는 여기에!
-
-st.subheader("체크박스")
-menu1 = st.checkbox('체크박스')
-
-
-
-
-
-
-
+# if st.button("제발 돼라.."):
+    # switch_page('history')
+    

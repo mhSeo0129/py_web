@@ -50,9 +50,9 @@ dp = []
 #dp table 만드는 함수
 def make_dp_table(choice_index_list, budget):
     number = len(choice_index_list)
-    print(number)
-    print(budget)
-    print(min_sum)
+    # print(number)
+    # print(budget)
+    # print(min_sum)
     for _ in range(number * 20):
         dp.append([[0] * number] * (int((budget - min_sum)/100) + 1))
 

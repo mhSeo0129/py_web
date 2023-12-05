@@ -17,6 +17,7 @@ Two (or more) newline characters in a row will result in a hard return.
 
 st.markdown(multi)
 
+
 md = st.text_area('Type in your markdown string (without outer quotes)',
                   "Happy Streamlit-ing! :balloon:")
 

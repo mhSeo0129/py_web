@@ -15,5 +15,5 @@ budget = st.session_state.get('budget', [])
 selected_categories = st.session_state.get('selected_categories', [])
 
 # 선택한 값 출력
-st.write(f"예산: {budget}")
+st.write(f"예산: {budget}원")
 st.write(f"선택한 음식 종류: {selected_categories}")

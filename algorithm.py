@@ -38,7 +38,7 @@ for i in range(len(data_set)):
 
 budget = int(input("사용가능한 예산을 입력해주세요: "))
 
-choice_index_list = [0, 2, 4]
+choice_index_list = [0, 3, 6, 7]
 
 min_sum = 0
 for i in choice_index_list:
@@ -58,11 +58,6 @@ def make_dp_table(choice_index_list, budget):
 
 make_dp_table(choice_index_list, budget)
 
-
-print(data_set[0][0][3])
-print(data_set[0][1][3])
-print(data_set[0][2][3])
-print(min_price_list)
 def dp_each_category(category_index, order_index):
     c = category_index
     o = order_index
@@ -75,7 +70,6 @@ def dp_each_category(category_index, order_index):
 
             compare = 0
 
-            # ========여기부터
             for k in range(0, o):
                 compare += dp[i][j][k][3]
 
@@ -91,8 +85,9 @@ def dp_each_category(category_index, order_index):
                 cost += 100
                 
 dp_each_category(0, 0)
-dp_each_category(2, 1)
-dp_each_category(4, 2)
+dp_each_category(3, 1)
+dp_each_category(6, 2)
+dp_each_category(7, 3)
 
 print(dp[59][20])
 

@@ -1,36 +1,67 @@
-# import streamlit as st
-# data = [1114, 1234, 423]
-# st.write('# Hello World')
-# st.write('\n## raw')
-# data
-# st.write('## bar chart')
-# st.bar_chart(data)
-
-# import pandas as pd
-# sview = pd.Series(data)
-# sview
-
-# st.write('## Fuck You')
+# app.py
 
 import streamlit as st
+import pandas as pd
 
-# 세션 상태 초기화
-if 'user_text' not in st.session_state:
-    st.session_state.user_text = ""
+# 전체 페이지 설정
+st.set_page_config(page_title="와라, 편의점", page_icon="🍱", layout="wide")
 
-def main():
-    # 제목 추가
-    st.title("와라 편의점")
-    st.write("# 자취생의 건강한 한 끼")
+# 왼쪽 상단 로고 (크기 조절)
+st.image("logo.png", use_column_width=False, width=300)  # 로고 크기를 조절하려면 width 값을 조절하세요.
 
-    # 텍스트 상자 추가
-    user_input = st.text_input("여기에 텍스트를 입력하세요:", "기본 텍스트")
+# 중앙에 텍스트 (가운데 정렬)
+st.title("자취생을 위한 건강한 한끼")
+st.write("st.write 사용")
 
-    # 입력한 텍스트를 세션 상태에 저장
-    st.session_state.user_text = user_input
+# 중앙 하단 버튼
+if st.button("식단 구성하기"):
+    # 버튼을 눌렀을 때의 동작
+    st.success("식단이 생성되었습니다. 맛있게 드세요!")
 
-    # 세션 상태에 저장된 텍스트 출력
-    st.write("입력한 텍스트:", st.session_state.user_text)
+if st.button("click button"):
+      st.write("Data Loading..")
+      # 데이터 로딩 함수는 여기에!
 
-if __name__ == "__main__":
+st.subheader("체크박스")
+menu1 = st.checkbox('체크박스')
+
+# 선택 박스
+
+st.subheader("라디오버튼")
+selected_item = st.radio("Radio Part", ("A", "B", "C"))
+
+if selected_item == "A":
+    st.write("A!!")
+elif selected_item == "B":
+    st.write("B!")
+elif selected_item == "C":
+    st.write("C!")
+    
+    
+# 다중선택박스
+st.subheader("\n다중선택박스")
+multi_select = st.multiselect('Please select somethings in multi selectbox!',
+                            ['A', 'B', 'C', 'D'])
+
+st.write('You selected:', multi_select)
+
+#슬라이더
+
+st.subheader("슬라이더")
+values = st.slider('Select a range of values', 0.0, 100.0, (25.0, 75.0))
+st.write('Values:', values)
+
+st.success("Success")
+
+def main() :
+    df = pd.read_csv('cvs_db.csv') # CSV 파일 불러오고 df 변수에 저장
+
+    st.dataframe(df)
+
+    df.head()
+
+    st.dataframe( df.head() )
+    st.write( df.head() )
+
+if __name__ == '__main__' :
     main()

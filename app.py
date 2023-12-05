@@ -40,11 +40,6 @@ if __name__ == "__main__" :
     main()
 
 
-
-
-
-
-
 # 중앙 하단 버튼
 if st.button("식단 구성하기"):
     # 버튼을 눌렀을 때의 동작
@@ -55,7 +50,7 @@ st.subheader("오늘 식단 구성은 어떻게 할까요?")
 def main() :
 
     category = ['라면', '김밥', '빵', '커피', '탄산음료', '유제품', '이온음료', '아이스크림', '디저트', '과자']
-    st.multiselect('구성할 음식 종류를 모두 선택하세요!', category)
+    st.multiselect('구성할 음식 종류를 모두 선택하세요!!!', category)
 
 if __name__ == "__main__" :
     main()

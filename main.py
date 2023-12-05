@@ -20,7 +20,6 @@ sidebar_deco = st.sidebar.selectbox(
 
 
 def main() :
-    
     # 유저한테 입력을 받는 방법
 
     # 1. 이름 입력 받기
@@ -28,20 +27,18 @@ def main() :
 
     if name != '' :
         st.subheader(name + '님, 안녕하세요!')
-
+        
         if 'user_name' not in st.session_state:
             st.session_state['user_name'] = ''
         st.session_state['user_name'] = name
     
     # 2. 입력 글자 갯수 제한
     st.number_input('키를 입력하세요', 1, 200)
-    
     st.number_input('몸무게를 입력하세요', 0, 150)
-
-
 
 if __name__ == "__main__" :
     main()
+
 
 def main() :
     # 비밀번호 입력
@@ -74,17 +71,8 @@ if st.button("\n\n\nclick button"):
 st.subheader("체크박스")
 menu1 = st.checkbox('체크박스')
 
-    
-st.subheader("각 종류별로 선택해서 모든 데이터 확인할 수 있도록")
 
-def main() :
-    df = pd.read_csv('cvs_db.csv')
 
-    with st.expander('모든 음식 확인하기') :
-        st.dataframe(df)
-
-if __name__ == "__main__" :
-    main()
 
 
 

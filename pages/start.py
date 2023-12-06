@@ -24,6 +24,7 @@ def main():
     height = st.number_input('키를 입력하세요', 0, 200)
     weight = st.number_input('몸무게를 입력하세요', 0, 150)
     st.session_state['budget'] = budget
+    st.session_state['weight'] = weight
 
     # 시작하기 버튼을 가운데 정렬하는 컨테이너 추가
     button_container = st.container()

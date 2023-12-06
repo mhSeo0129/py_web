@@ -142,11 +142,12 @@ total_cost = df["가격(원)"].sum()
 total_cal = df["칼로리(kcal)"].sum()
 total_protein = df["단백질(g)"].sum()
 
+weight = st.session_state['weight']
+weight = int(weight)
+
 st.write(f"총 가격: {total_cost}원")
 st.write(f"총 칼로리: {total_cal}kcal")
 st.write(f"총 단백질: {total_protein}g")
 
 st.write(f"건강한 성인의 경우 일반적으로 체중 1kg 당 0.8g에서 1.2g의 단백질이 권장됩니다.")
-st.markdown(name + "님의 권장 단백질 섭취량은 " + 0.8*60 "~" + 1.2*60 "g 입니다.")
-
-st.markdown("[ " + name + "님 입력 정보 ] ")
+st.markdown(name + "님의 권장 단백질 섭취량은 " + str(int(0.8*weight)) + "~" + str(int(1.2*weight)) + "g 입니다.")

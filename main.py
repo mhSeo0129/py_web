@@ -1,5 +1,7 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
+from st_pages import Page, add_page_title, show_pages
+from streamlit_option_menu import option_menu
 
 # 전체 페이지 설정 (가장 위로 이동)
 st.set_page_config(page_title="와라, 편의점", page_icon="🍱", layout="wide")
@@ -13,29 +15,57 @@ external_css = """
 """
 st.markdown(external_css, unsafe_allow_html=True)
 
+from st_pages import Page, add_page_title, show_pages
+
+show_pages(
+    [
+        Page("main.py", "Home", "🏠"),
+        # Can use :<icon-name>: or the actual icon
+        Page("pages/history.py", "History", ":books:"),
+        # The pages appear in the order you pass them
+        Page("pages/start.py", "Make menu", "🍘"),
+        Page("pages/map.py", "map", "🛣️"),
+        # Will use the default icon and name based on the filename if you don't
+        # pass thems
+        Page("pages/database.py", "All menu", "🧰"),
+        Page("pages/menu.py", "your menu", "🥘")
+    ]
+)
+st.markdown("""
+<style>
+.st-emotion-cache-j7qwjs eczjsme7{
+    display: none;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
 # 이미지 파일 경로
 image_path = "subtitle.png"
 
 # 이미지를 현재 열의 너비에 맞게 조정
 st.image(image_path, use_column_width=True)
 
-# st.markdown("""
-#     <h2 style='text-align: center; margin-top: 50px; margin-bottom: 250px; color: black;'>
-#         자취생을 위한 건강한 한 끼
-#     </h2>
-# """, unsafe_allow_html=True)
 
 
+# with st.sidebar:
+#     choose = option_menu("Pages", ["main", "history", "start"],
+#                          icons=['1-circle', '2-circle', '3-circle'],
+#                          menu_icon="메뉴 타이틀 아이콘", default_index=0,
+#                          styles={
+#                          # default_index = 처음에 보여줄 페이지 인덱스 번호
+#         "container": {"padding": "5!important", "background-color": "#fafafa"},
+#         "icon": {"color": "orange", "font-size": "25px"}, 
+#         "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+#         "nav-link-selected": {"background-color": "#02ab21"},
+#     } # css 설정
+#     )
 
-# 중앙에 텍스트 (가운데 정렬)
-sidebar_deco = st.sidebar.selectbox(
-    'Pages',
-    ('main', 'history', 'start', 'menu', 'database', 'map'))
 
 button_container = st.container()
 with button_container:
     if st.button("시작하기"):
-        switch_page('start')
+        switch_page('make menu')
 
 # 스타일을 적용하여 가운데 정렬
 button_container.markdown("""

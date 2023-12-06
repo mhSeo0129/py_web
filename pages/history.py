@@ -4,3 +4,4 @@ import streamlit as st
 st.set_page_config(page_title="Team history", page_icon="🍱", layout="wide")
 
 st.write("우리가 걸어온 발자취를 소개합니다")
+

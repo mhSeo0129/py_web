@@ -10,6 +10,10 @@ st.markdown("""
     </h1>
 """, unsafe_allow_html=True)
 
+from st_pages import Page, add_page_title, show_pages
+
+
+
 if 'user_name' not in st.session_state:
     st.write("")
 elif st.session_state['user_name'] == "":    

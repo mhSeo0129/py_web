@@ -49,7 +49,7 @@ st.image(image_path, use_column_width=True)
 button_container = st.container()
 with button_container:
     if st.button("시작하기"):
-        switch_page('make menu')
+        switch_page('Make menu')
 
 # 스타일을 적용하여 가운데 정렬
 button_container.markdown("""

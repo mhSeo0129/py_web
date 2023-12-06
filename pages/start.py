@@ -7,6 +7,8 @@ st.set_page_config(page_title="와라, 편의점", page_icon="🍱", layout="wid
 # 왼쪽 상단 로고 (크기 조절)
 st.image("logo.png", use_column_width=False, width=200)
 
+from st_pages import Page, add_page_title, show_pages
+
 def main():
     # 유저한테 입력을 받는 방법
 
@@ -36,4 +38,4 @@ main()
 # 중앙 하단 버튼
 if st.button("식단 구성하기"):
     # 버튼을 눌렀을 때의 동작
-    switch_page('menu')
+    switch_page('your menu')

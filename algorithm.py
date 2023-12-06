@@ -38,7 +38,7 @@ for i in range(len(data_set)):
 
 budget = int(input("사용가능한 예산을 입력해주세요: "))
 
-choice_index_list = [0, 3, 6, 7]
+choice_index_list = [0, 3, 6, 7, 8]
 
 min_sum = 0
 for i in choice_index_list:
@@ -88,6 +88,7 @@ dp_each_category(0, 0)
 dp_each_category(3, 1)
 dp_each_category(6, 2)
 dp_each_category(7, 3)
+dp_each_category(8, 4)
 
 print(dp[59][20])
 

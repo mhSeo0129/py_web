@@ -1,9 +1,11 @@
 import numpy as np
 import pandas as pd 
 import streamlit as st
+import requests
 
 # 전체 페이지 설정
-st.set_page_config(page_title="음식 목록", page_icon="🍱", layout="wide")
+st.set_page_config(page_title="전국 편의점 지도", page_icon="🍱", layout="wide")
+
 
 if 'user_name' in st.session_state:
     name = st.session_state['user_name']

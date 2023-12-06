@@ -28,7 +28,7 @@ st.write(f"선택한 음식 종류: {selected_categories}")
 
 # 예산에 맞는 최고의 단백질 식단을 추천하는 부분을 st.markdown으로 수정
 st.markdown("""
-           <p style='margin-top: 50px; margin-bottom: 50px; color: black;'>
+           <p style='margin-top: 50px; margin-bottom: 50px; color: yellow;'>
             [ 예산에 맞는 최고의 단백질 식단을 추천합니다 ]
             </p>
 """, unsafe_allow_html=True)
@@ -128,4 +128,21 @@ for i in range(0, len(choice_index_list)):
 x = len(choice_index_list) * 20 - 1
 y = int((budget - min_sum)/100)
 
-st.table(dp[x][y])
+df = pd.DataFrame(dp[x][y], columns=["ID","종류","상품명","가격(원)","칼로리(kcal)","나트륨(mg)","탄수화물(g)","당류(g)","지방(g)","트랜스지방(g)","포화지방(g)","콜레스테롤(mg)","단백질(g)"])
+
+df_without_first_column = df.drop(columns=['ID'])
+
+st.table(df_without_first_column)
+
+total_cost = df["가격(원)"].sum()
+total_cal = df["칼로리(kcal)"].sum()
+total_protein = df["단백질(g)"].sum()
+
+st.write(f"총 가격: {total_cost}원")
+st.write(f"총 칼로리: {total_cal}kcal")
+st.write(f"총 단백질: {total_protein}g")
+
+st.write(f"건강한 성인의 경우 일반적으로 체중 1kg 당 0.8g에서 1.2g의 단백질이 권장됩니다.")
+st.markdown(name + "님의 권장 단백질 섭취량은 " + 0.8*60 "~" + 1.2*60 "g 입니다.")
+
+st.markdown("[ " + name + "님 입력 정보 ] ")

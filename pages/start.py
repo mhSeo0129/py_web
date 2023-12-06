@@ -13,12 +13,9 @@ def main():
     # 1. 이름 입력 받기
     name = st.text_input('당신의 닉네임을 입력하세요!')
 
-    if name != '':
-        st.subheader(name + '님, 안녕하세요!')
-
-        if 'user_name' not in st.session_state:
-            st.session_state['user_name'] = ''
-        st.session_state['user_name'] = name
+    if 'user_name' not in st.session_state:
+        st.session_state['user_name'] = ''
+    st.session_state['user_name'] = name
 
     # 2. 입력 글자 갯수 제한
     budget = st.number_input('오늘의 식단 예산을 입력하세요', 0, 20000)

@@ -10,10 +10,6 @@ st.markdown("""
     </h1>
 """, unsafe_allow_html=True)
 
-from st_pages import Page, add_page_title, show_pages
-
-
-
 if 'user_name' not in st.session_state:
     st.write("")
 elif st.session_state['user_name'] == "":    
@@ -32,7 +28,7 @@ st.write(f"선택한 음식 종류: {selected_categories}")
 
 # 예산에 맞는 최고의 단백질 식단을 추천하는 부분을 st.markdown으로 수정
 st.markdown("""
-           <p style='margin-top: 50px; margin-bottom: 50px; color: yellow;'>
+           <p style='margin-top: 50px; margin-bottom: 50px; color: black;'>
             [ 예산에 맞는 최고의 단백질 식단을 추천합니다 ]
             </p>
 """, unsafe_allow_html=True)

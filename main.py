@@ -46,21 +46,6 @@ image_path = "subtitle.png"
 st.image(image_path, use_column_width=True)
 
 
-
-# with st.sidebar:
-#     choose = option_menu("Pages", ["main", "history", "start"],
-#                          icons=['1-circle', '2-circle', '3-circle'],
-#                          menu_icon="메뉴 타이틀 아이콘", default_index=0,
-#                          styles={
-#                          # default_index = 처음에 보여줄 페이지 인덱스 번호
-#         "container": {"padding": "5!important", "background-color": "#fafafa"},
-#         "icon": {"color": "orange", "font-size": "25px"}, 
-#         "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-#         "nav-link-selected": {"background-color": "#02ab21"},
-#     } # css 설정
-#     )
-
-
 button_container = st.container()
 with button_container:
     if st.button("시작하기"):

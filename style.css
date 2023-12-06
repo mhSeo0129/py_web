@@ -1,19 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap'); 
-
-html, body, [class*="css"] {
-    font-family: 'Roboto', sans-serif; 
-    font-size: 18px;
-    font-weight: 500;
-    color: #091747;
-}
-
+/* styles.css */
 @font-face {
     font-family: 'CustomFont';
-    src: url(/fonts/mhSeo.ttf) format('truetype');
-    font-weight: normal;
     font-style: normal;
-}
-    [class^="ag-"]:not([class^="ag-icon"]) {
-        font-family: "CustomFont";
-}
-
+    font-weight: normal;
+    src: local('/fonts/mhSeo.ttf'), url('/fonts/mhSeo.ttf') format('ttf');
+  }
+  
+  body {
+    font-family: 'CustomFont', sans-serif;
+  }
+  

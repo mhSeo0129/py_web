@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from st_pages import Page, add_page_title, show_pages
-from streamlit_option_menu import option_menu
 
 # 전체 페이지 설정 (가장 위로 이동)
 st.set_page_config(page_title="와라, 편의점", page_icon="🍱", layout="wide")

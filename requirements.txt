@@ -1,4 +1,4 @@
 st_pages
-streamlit_extras.switch_page_button
+streamlit_extras
 numpy
 pandas

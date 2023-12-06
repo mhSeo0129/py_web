@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from st_pages import Page, add_page_title, show_pages
-from streamlit_option_menu import option_menu
 
 # 전체 페이지 설정 (가장 위로 이동)
 st.set_page_config(page_title="와라, 편의점", page_icon="🍱", layout="wide")
@@ -45,21 +44,6 @@ image_path = "subtitle.png"
 
 # 이미지를 현재 열의 너비에 맞게 조정
 st.image(image_path, use_column_width=True)
-
-
-
-# with st.sidebar:
-#     choose = option_menu("Pages", ["main", "history", "start"],
-#                          icons=['1-circle', '2-circle', '3-circle'],
-#                          menu_icon="메뉴 타이틀 아이콘", default_index=0,
-#                          styles={
-#                          # default_index = 처음에 보여줄 페이지 인덱스 번호
-#         "container": {"padding": "5!important", "background-color": "#fafafa"},
-#         "icon": {"color": "orange", "font-size": "25px"}, 
-#         "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-#         "nav-link-selected": {"background-color": "#02ab21"},
-#     } # css 설정
-#     )
 
 
 button_container = st.container()
